@@ -9,8 +9,8 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
   }
 
   async getMovieList() {
-    const {API_KEY, BASE_API_URL} = this._config
-    const url = `${BASE_API_URL}/discover/${API_KEY}`
+    const {API_KEY, BASE_URL} = this._config
+    const url = `${BASE_URL}/discover/${API_KEY}`
     const {data} = await this._fetcher.get(url)
 
     return this._valueObjectFactory.movieListValueObject(data)

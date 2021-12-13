@@ -8,7 +8,6 @@ export default class GetMovieListUseCase extends UseCase {
 
   async execute() {
     const movieList = await this._repository.getMovieList()
-    return movieList.data.results.toJSON() // Siempre aqui esta llamada a toJSON
+    return movieList.toJSON() // Siempre aqui esta llamada a toJSON
   }
 }
- 
