@@ -372,7 +372,11 @@ describe.only('GetMovieListUseCase', () => {
     it.only('should return a movie list', () => {
       mocker
         .httpMock(domain.get('config').BASE_URL)
-        .get(`/search/${domain.get('config').API_KEY}&query=frozen&page=1`)
+        .get(
+          `/search/movie?api_key=${
+            domain.get('config').API_KEY
+          }&query=frozen&page=1`
+        )
         .reply(MOVIE_LIST, 200)
       console.log(mocker)
       domain

@@ -28,7 +28,7 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
   async getMovieListByCriteriaAndPage({criteria, page}) {
     const {API_KEY, BASE_URL} = this._config
     debugger
-    const url = `${BASE_URL}/search/${API_KEY}&query=${criteria}&page=${page}`
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${criteria}&page=${page}`
     return this._fetcher
       .get(url)
       .then(({data}) => this._valueObjectFactory.movieListValueObject(data))
