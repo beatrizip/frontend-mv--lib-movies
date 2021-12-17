@@ -8,7 +8,6 @@ export default class GetMovieDetailsUseCase extends UseCase {
 
   async execute(id) {
     const movie = await this._repository.getMovieDetails(id)
-
     return movie.toJSON()
   }
 }

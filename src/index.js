@@ -7,9 +7,21 @@ const MovieUseCasesFactory = () =>
   )
 
 const useCases = {
-  get_movie_list_use_case: [MovieUseCasesFactory, 'getMovieListUseCase']
+  get_movie_list_by_criteria_use_case: [
+    MovieUseCasesFactory,
+    'getMovieListByCriteriaUseCase'
+  ],
+  get_movie_list_by_criteria_and_page_use_case: [
+    MovieUseCasesFactory,
+    'getMovieListByCriteriaAndPageUseCase'
+  ],
+  get_most_popular_movie_list_use_case: [
+    MovieUseCasesFactory,
+    'getMostPopularMovieListUseCase'
+  ],
+  get_movie_details_use_case: [MovieUseCasesFactory, 'getMovieDetailsUseCase']
 }
 
-const EntryPoint = EntryPointFactory({config, useCases})
+const Domain = EntryPointFactory({config, useCases})
 
-export default EntryPoint
+export default Domain
