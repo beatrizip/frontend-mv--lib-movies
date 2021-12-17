@@ -4,353 +4,352 @@ import Domain from '../../src'
 import sinon from 'sinon'
 
 const MOVIE_LIST = {
-  page: 1,
+  page: 2,
   results: [
     {
       adult: false,
-      backdrop_path: '/VlHt27nCqOuTnuX6bku8QZapzO.jpg',
-      genre_ids: [28, 12, 878, 14],
-      id: 634649,
+      backdrop_path: '/9WHM084AoskcHCObAy4QnJg01eM.jpg',
+      genre_ids: [16, 10751, 12, 14],
+      id: 109445,
       original_language: 'en',
-      original_title: 'Spider-Man: No Way Home',
+      original_title: 'Frozen',
       overview:
-        'Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.',
-      popularity: 7962.394,
-      poster_path: '/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-      release_date: '2021-12-15',
-      title: 'Spider-Man: No Way Home',
+        "Young princess Anna of Arendelle dreams about finding true love at her sister Elsa’s coronation. Fate takes her on a dangerous journey in an attempt to end the eternal winter that has fallen over the kingdom. She's accompanied by ice delivery man Kristoff, his reindeer Sven, and snowman Olaf. On an adventure where she will find out what friendship, courage, family, and true love really means.",
+      popularity: 113.512,
+      poster_path: '/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg',
+      release_date: '2013-11-20',
+      title: 'Frozen',
       video: false,
-      vote_average: 8.8,
-      vote_count: 573
+      vote_average: 7.3,
+      vote_count: 13748
     },
     {
       adult: false,
-      backdrop_path: '/eENEf62tMXbhyVvdcXlnQz2wcuT.jpg',
-      genre_ids: [878, 28, 12],
-      id: 580489,
+      backdrop_path: '/AoSZyb37ljMAxw0RdeQEBHKtgcc.jpg',
+      genre_ids: [10751, 16, 12, 35, 14],
+      id: 330457,
       original_language: 'en',
-      original_title: 'Venom: Let There Be Carnage',
+      original_title: 'Frozen II',
       overview:
-        'After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.',
-      popularity: 8774.196,
-      poster_path: '/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg',
-      release_date: '2021-09-30',
-      title: 'Venom: Let There Be Carnage',
+        'Elsa, Anna, Kristoff and Olaf head far into the forest to learn the truth about an ancient mystery of their kingdom.',
+      popularity: 175.413,
+      poster_path: '/mINJaa34MtknCYl5AjtNJzWj8cD.jpg',
+      release_date: '2019-11-20',
+      title: 'Frozen II',
       video: false,
-      vote_average: 7.2,
-      vote_count: 4596
+      vote_average: 7.3,
+      vote_count: 7832
     },
     {
       adult: false,
-      backdrop_path: '/7ajHGIAYNMiIzejy1LJWdPrcAx8.jpg',
-      genre_ids: [28, 35, 80, 53],
-      id: 512195,
+      backdrop_path: '/ic16B2KUfEFicIB3eiBUAYqrwz7.jpg',
+      genre_ids: [16, 10751, 12, 35],
+      id: 326359,
       original_language: 'en',
-      original_title: 'Red Notice',
+      original_title: 'Frozen Fever',
       overview:
-        "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
-      popularity: 2589.711,
-      poster_path: '/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg',
-      release_date: '2021-11-04',
-      title: 'Red Notice',
-      video: false,
-      vote_average: 6.8,
-      vote_count: 2047
-    },
-    {
-      adult: false,
-      backdrop_path: '/cinER0ESG0eJ49kXlExM0MEWGxW.jpg',
-      genre_ids: [28, 12, 14],
-      id: 566525,
-      original_language: 'en',
-      original_title: 'Shang-Chi and the Legend of the Ten Rings',
-      overview:
-        'Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.',
-      popularity: 3090.373,
-      poster_path: '/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg',
-      release_date: '2021-09-01',
-      title: 'Shang-Chi and the Legend of the Ten Rings',
-      video: false,
-      vote_average: 7.8,
-      vote_count: 4296
-    },
-    {
-      adult: false,
-      backdrop_path: '/5RuR7GhOI5fElADXZb0X2sr9w5n.jpg',
-      genre_ids: [16, 35, 10751, 14],
-      id: 568124,
-      original_language: 'en',
-      original_title: 'Encanto',
-      overview:
-        "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto. The magic of the Encanto has blessed every child in the family with a unique gift from super strength to the power to heal—every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
-      popularity: 2459.453,
-      poster_path: '/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg',
-      release_date: '2021-11-24',
-      title: 'Encanto',
-      video: false,
-      vote_average: 7.4,
-      vote_count: 340
-    },
-    {
-      adult: false,
-      backdrop_path: '/1Wlwnhn5sXUIwlxpJgWszT622PS.jpg',
-      genre_ids: [16, 35, 10751],
-      id: 585245,
-      original_language: 'en',
-      original_title: 'Clifford the Big Red Dog',
-      overview:
-        'As Emily struggles to fit in at home and at school, she discovers a small red puppy who is destined to become her best friend. When Clifford magically undergoes one heck of a growth spurt, becomes a gigantic dog and attracts the attention of a genetics company, Emily and her Uncle Casey have to fight the forces of greed as they go on the run across New York City. Along the way, Clifford affects the lives of everyone around him and teaches Emily and her uncle the true meaning of acceptance and unconditional love.',
-      popularity: 2366.544,
-      poster_path: '/ygPTrycbMSFDc5zUpy4K5ZZtQSC.jpg',
-      release_date: '2021-11-10',
-      title: 'Clifford the Big Red Dog',
-      video: false,
-      vote_average: 7.5,
-      vote_count: 595
-    },
-    {
-      adult: false,
-      backdrop_path: '/mFbS5TwN95BcSEfiztdchLgTQ0v.jpg',
-      genre_ids: [28, 18, 36],
-      id: 617653,
-      original_language: 'en',
-      original_title: 'The Last Duel',
-      overview:
-        'King Charles VI declares that Knight Jean de Carrouges settle his dispute with his squire, Jacques Le Gris, by challenging him to a duel.',
-      popularity: 1973.01,
-      poster_path: '/zjrJE0fpzPvX8saJXj8VNfcjBoU.jpg',
-      release_date: '2021-10-13',
-      title: 'The Last Duel',
-      video: false,
-      vote_average: 7.6,
-      vote_count: 945
-    },
-    {
-      adult: false,
-      backdrop_path: '/5RMqFZdefnDwY7rdD1oJcTkWPdF.jpg',
-      genre_ids: [16, 35, 10751],
-      id: 774741,
-      original_language: 'en',
-      original_title: 'Diary of a Wimpy Kid',
-      overview:
-        'Greg Heffley is a scrawny but ambitious kid with an active imagination and big plans to be rich and famous – he just has to survive middle school first.',
-      popularity: 1679.37,
-      poster_path: '/obg6lWuNaZkoSlwrVG4VVk4SmT.jpg',
-      release_date: '2021-12-03',
-      title: 'Diary of a Wimpy Kid',
-      video: false,
-      vote_average: 7,
-      vote_count: 77
-    },
-    {
-      adult: false,
-      backdrop_path: '/t27k4502Gzvln1At8iA0DMOd0mt.jpg',
-      genre_ids: [16, 878, 10751, 35],
-      id: 482321,
-      original_language: 'en',
-      original_title: "Ron's Gone Wrong",
-      overview:
-        "In a world where walking, talking, digitally connected bots have become children's best friends, an 11-year-old finds that his robot buddy doesn't quite work the same as the others do.",
-      popularity: 1703.348,
-      poster_path: '/gA9QxSravC2EVEkEKgyEmDrfL0e.jpg',
-      release_date: '2021-10-15',
-      title: "Ron's Gone Wrong",
-      video: false,
-      vote_average: 8.5,
-      vote_count: 367
-    },
-    {
-      adult: false,
-      backdrop_path: '/xGrTm3J0FTafmuQ85vF7ZCw94x6.jpg',
-      genre_ids: [18, 36, 12],
-      id: 589761,
-      original_language: 'ru',
-      original_title: 'Чернобыль',
-      overview:
-        'The aftermath of a shocking explosion at the Chernobyl nuclear power station made hundreds of people sacrifice their lives to clean up the site of the catastrophe and to successfully prevent an even bigger disaster that could have turned a large part of the European continent into an uninhabitable exclusion zone. This is their story.',
-      popularity: 1836.663,
-      poster_path: '/kfQJQWFEoWRVBH8FUKnT0HX1yRS.jpg',
-      release_date: '2021-04-15',
-      title: 'Chernobyl: Abyss',
-      video: false,
-      vote_average: 6.3,
-      vote_count: 238
-    },
-    {
-      adult: false,
-      backdrop_path: '/lyvszvJJqqI8aqBJ70XzdCNoK0y.jpg',
-      genre_ids: [28, 12, 18, 14, 878],
-      id: 524434,
-      original_language: 'en',
-      original_title: 'Eternals',
-      overview:
-        'The Eternals are a team of ancient aliens who have been living on Earth in secret for thousands of years. When an unexpected tragedy forces them out of the shadows, they are forced to reunite against mankind’s most ancient enemy, the Deviants.',
-      popularity: 1765.55,
-      poster_path: '/uaEIEIw9Y7DsvbWWMbG9ySjNF73.jpg',
-      release_date: '2021-11-03',
-      title: 'Eternals',
-      video: false,
-      vote_average: 7.1,
-      vote_count: 1431
-    },
-    {
-      adult: false,
-      backdrop_path: '/upOi9aVqPPky7Ba4GsiyFdjc82I.jpg',
-      genre_ids: [37, 28, 53],
-      id: 887767,
-      original_language: 'en',
-      original_title: 'Last Shoot Out',
-      overview:
-        "Soon after a newlywed learns that her husband had her father shot down, she flees from the Callahan ranch in fear. She's rescued by a gunman who safeguards her at a remote outpost as he staves off her husband's attempts to reclaim his bride.",
-      popularity: 1498.365,
-      poster_path: '/pvEtPxotI3POlVPvNxgrHJuDXfe.jpg',
-      release_date: '2021-12-03',
-      title: 'Last Shoot Out',
+        "On Anna's birthday, Elsa and Kristoff are determined to give her the best celebration ever, but Elsa's icy powers may put more than just the party at risk.",
+      popularity: 56.066,
+      poster_path: '/mPrDJ7puYzPLG5kPM96iNszF2sM.jpg',
+      release_date: '2015-03-09',
+      title: 'Frozen Fever',
       video: false,
       vote_average: 6.9,
+      vote_count: 1577
+    },
+    {
+      adult: false,
+      backdrop_path: '/9K4QqQZg4TVXcxBGDiVY4Aey3Rn.jpg',
+      genre_ids: [16, 10751, 12, 35, 14],
+      id: 460793,
+      original_language: 'en',
+      original_title: "Olaf's Frozen Adventure",
+      overview:
+        'Olaf is on a mission to harness the best holiday traditions for Anna, Elsa, and Kristoff.',
+      popularity: 41.404,
+      poster_path: '/As8WTtxXs9e3cBit3ztTf7zoRmm.jpg',
+      release_date: '2017-10-27',
+      title: "Olaf's Frozen Adventure",
+      video: false,
+      vote_average: 6.4,
+      vote_count: 1232
+    },
+    {
+      adult: false,
+      backdrop_path: '/9mvdRoVrXNBt6y43tfJBlSoEysT.jpg',
+      genre_ids: [53],
+      id: 44363,
+      original_language: 'en',
+      original_title: 'Frozen',
+      overview:
+        'When three skiers find themselves stranded on a chair lift at a New England ski resort that has closed for the next week, they are forced to make life or death choices that prove to be more perilous than staying put and freezing to death.',
+      popularity: 17.913,
+      poster_path: '/6SjRpaJg43iJnY0jlJ6c61tAKOo.jpg',
+      release_date: '2010-02-05',
+      title: 'Frozen',
+      video: false,
+      vote_average: 5.9,
+      vote_count: 1414
+    },
+    {
+      adult: false,
+      backdrop_path: '/lu1xY551TaDj4Lx25RPsqizTBAr.jpg',
+      genre_ids: [18],
+      id: 10183,
+      original_language: 'en',
+      original_title: 'Frozen River',
+      overview:
+        "Ray Eddy, an upstate New York trailer mom, is lured into the world of illegal immigrant smuggling. Broke after her husband takes off with the down payment for their new doublewide, Ray reluctantly teams up with Lila, a smuggler, and the two begin making runs across the frozen St. Lawrence River carrying illegal Chinese and Pakistani immigrants in the trunk of Ray's Dodge Spirit.",
+      popularity: 10.878,
+      poster_path: '/qZRcN4JLwYQWTxKlycZPLQb37mO.jpg',
+      release_date: '2008-03-26',
+      title: 'Frozen River',
+      video: false,
+      vote_average: 6.7,
+      vote_count: 225
+    },
+    {
+      adult: false,
+      backdrop_path: '/tb7WTOEPYKxIQPMEQRW1xruTDLO.jpg',
+      genre_ids: [53, 80],
+      id: 199373,
+      original_language: 'en',
+      original_title: 'The Frozen Ground',
+      overview:
+        'An Alaska State Trooper partners with a young woman who escaped the clutches of serial killer Robert Hansen to bring the murderer to justice. Based on actual events.',
+      popularity: 13.763,
+      poster_path: '/hHDj1h3lJvYd9Cervoswz9crhWg.jpg',
+      release_date: '2013-07-11',
+      title: 'The Frozen Ground',
+      video: false,
+      vote_average: 6.3,
+      vote_count: 1144
+    },
+    {
+      adult: false,
+      backdrop_path: '/7nFkj8E1s7MRl7eqZLnszitoy0c.jpg',
+      genre_ids: [16, 10751],
+      id: 431562,
+      original_language: 'en',
+      original_title: 'LEGO Frozen Northern Lights',
+      overview: 'Elsa, Anna and friends search for the Northern Lights.',
+      popularity: 14.491,
+      poster_path: '/jlk5MeGlNSiy773SWot9dGAQ2as.jpg',
+      release_date: '2017-01-05',
+      title: 'LEGO Frozen Northern Lights',
+      video: false,
+      vote_average: 6.8,
+      vote_count: 64
+    },
+    {
+      adult: false,
+      backdrop_path: '/8Fipsuf4NtzQ8vn6wHebXaXLddy.jpg',
+      genre_ids: [10402, 10751, 35],
+      id: 761740,
+      original_language: 'en',
+      original_title: 'Frozen, A Musical Spectacular',
+      overview:
+        'For the first time in forever, Disney Cruise Line shared full video of Frozen, A Musical Spectacular to enjoy on land featuring the opening cast. Frozen, A Musical Spectacular is presented exclusively aboard the Disney Wonder and Disney Fantasy. The show is a full-length retelling of Anna and Elsa’s Frozen adventure in Arendelle based on the Disney animated movie. Frozen, A Musical Spectacular revisits the captivating escapades of royal sisters Anna and Elsa when an accident as children changes their lives—and their relationship—forever.',
+      popularity: 8.058,
+      poster_path: '/cDm5ON9PLj1plyjPurdiRPkByOT.jpg',
+      release_date: '2020-11-06',
+      title: 'Frozen, A Musical Spectacular',
+      video: true,
+      vote_average: 7,
+      vote_count: 2
+    },
+    {
+      adult: false,
+      backdrop_path: null,
+      genre_ids: [27, 53],
+      id: 150211,
+      original_language: 'en',
+      original_title: 'The Frozen',
+      overview:
+        "After a harrowing snowmobile accident, a young couple is stranded in the woods and must survive while waiting for help to arrive. Events take a turn for the worse after the disappearance of Emma's boyfriend, leaving her on her own not only to battle the elements, but also to elude a mysterious hunter who is tracking her through the forest.",
+      popularity: 5.726,
+      poster_path: '/jbSBwAGNP4N4AcNX2Rxq4h5u5g3.jpg',
+      release_date: '2012-10-10',
+      title: 'The Frozen',
+      video: false,
+      vote_average: 4.5,
+      vote_count: 27
+    },
+    {
+      adult: false,
+      backdrop_path: '/sGjhRHNiQSkgVec18D3oX45hPmz.jpg',
+      genre_ids: [53],
+      id: 26041,
+      original_language: 'en',
+      original_title: 'Frozen',
+      overview:
+        "It's two years since the mysterious disappearance of Kath Swarbrick's older sister Annie, but Kath remains haunted by a need to know what happened. When police investigations wind down, Kath continues the search herself. She gets nowhere until she steals some CCTV footage of her sister on her final day. Visiting the spot where Annie was filmed, Kath becomes convinced she has found a portal to another reality and from this portal Kath is trying to say something.",
+      popularity: 3.338,
+      poster_path: '/nBdbTIeDNkOtGGKps8F5SmkjbFg.jpg',
+      release_date: '2005-03-12',
+      title: 'Frozen',
+      video: false,
+      vote_average: 5.7,
+      vote_count: 15
+    },
+    {
+      adult: false,
+      backdrop_path: null,
+      genre_ids: [99],
+      id: 482475,
+      original_language: 'en',
+      original_title: 'The Making of Frozen',
+      overview: '"The Making of Frozen" DVD Extra',
+      popularity: 6.577,
+      poster_path: '/7BYTYpNZU7xjzZDe87koqzHEWhL.jpg',
+      release_date: '2014-03-18',
+      title: 'The Making of Frozen',
+      video: false,
+      vote_average: 7.3,
+      vote_count: 3
+    },
+    {
+      adult: false,
+      backdrop_path: '/5Oi0V41s0576eSG84dRgIVpHPCl.jpg',
+      genre_ids: [10749, 10770],
+      id: 491408,
+      original_language: 'en',
+      original_title: 'Frozen in Love',
+      overview:
+        'When struggling bookstore owner Mary and the bad boy of professional hockey, Adam, are teamed together to help facilitate an image makeover for the other, they soon realize that opposites attract and they find themselves unexpectedly frozen in love.',
+      popularity: 4.877,
+      poster_path: '/cJr7U0Is7p9qDKZ2CM81KjxQU70.jpg',
+      release_date: '2018-01-13',
+      title: 'Frozen in Love',
+      video: false,
+      vote_average: 6.7,
       vote_count: 33
     },
     {
       adult: false,
-      backdrop_path: '/r2GAjd4rNOHJh6i6Y0FntmYuPQW.jpg',
-      genre_ids: [12, 28, 53],
-      id: 370172,
+      backdrop_path: '/tf1HhoUfQaRJ2Sdig5OB2NaQPTH.jpg',
+      genre_ids: [99],
+      id: 594676,
       original_language: 'en',
-      original_title: 'No Time to Die',
+      original_title: 'Hope Frozen',
       overview:
-        'Bond has left active service and is enjoying a tranquil life in Jamaica. His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help. The mission to rescue a kidnapped scientist turns out to be far more treacherous than expected, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.',
-      popularity: 1359.019,
-      poster_path: '/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg',
-      release_date: '2021-09-29',
-      title: 'No Time to Die',
+        "A Buddhist scientist from Bangkok decides to cryo-preserve his daughter's brain. As scandal swirls around the family, they struggle to grieve a child that, in their view, is suspended between death and a future reawakening.",
+      popularity: 2.982,
+      poster_path: '/1sCawwtBif3Ggt6sr4DXG7SYf8d.jpg',
+      release_date: '2018-06-15',
+      title: 'Hope Frozen',
       video: false,
-      vote_average: 7.5,
-      vote_count: 2564
+      vote_average: 5.9,
+      vote_count: 10
     },
     {
       adult: false,
-      backdrop_path: '/tTlAA0REGPXSZPBfWyTW9ipIv1I.jpg',
-      genre_ids: [28, 12, 878, 18],
-      id: 315635,
+      backdrop_path: '/kXBm2RTGCF9NnD3LAUy3HcoG8hf.jpg',
+      genre_ids: [10751, 16, 35],
+      id: 299078,
       original_language: 'en',
-      original_title: 'Spider-Man: Homecoming',
+      original_title: "Spongebob Squarepants: Spongebob's Frozen Face-Off",
       overview:
-        'Following the events of Captain America: Civil War, Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in Queens, New York City, with fighting crime as his superhero alter ego Spider-Man as a new threat, the Vulture, emerges.',
-      popularity: 1804.877,
-      poster_path: '/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg',
-      release_date: '2017-07-05',
-      title: 'Spider-Man: Homecoming',
-      video: false,
-      vote_average: 7.4,
-      vote_count: 17357
+        "It's a race to the South Pole. With the whole town occupied, will Plankton finally get his hands on the formula and end the Krusty Krab's fast-food supremacy for good?",
+      popularity: 4.108,
+      poster_path: '/boX9veaa90RtaFcdGSsAkzD0U5y.jpg',
+      release_date: '2012-01-03',
+      title: "Spongebob Squarepants: Spongebob's Frozen Face-Off",
+      video: true,
+      vote_average: 8.4,
+      vote_count: 8
     },
     {
       adult: false,
-      backdrop_path: '/ng6SSB3JhbcpKTwbPDsRwUYK8Cq.jpg',
-      genre_ids: [28, 12, 878],
-      id: 429617,
+      backdrop_path: null,
+      genre_ids: [28, 18, 53, 10770],
+      id: 64375,
       original_language: 'en',
-      original_title: 'Spider-Man: Far From Home',
+      original_title: 'Frozen Impact',
       overview:
-        'Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.',
-      popularity: 1758.757,
-      poster_path: '/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg',
-      release_date: '2019-06-28',
-      title: 'Spider-Man: Far From Home',
+        "A plane, carrying the liver destined for a child's transplant, crashes in a hailstorm.",
+      popularity: 2.701,
+      poster_path: '/wbBj3fsIxEFBzxaLV8Mi1KSSa0Z.jpg',
+      release_date: '2003-03-14',
+      title: 'Frozen Impact',
       video: false,
-      vote_average: 7.5,
-      vote_count: 11226
+      vote_average: 5.5,
+      vote_count: 10
     },
     {
       adult: false,
-      backdrop_path: '/sLWUtbrpiLp23a0XDSiUiltdFPJ.jpg',
-      genre_ids: [28, 12, 14],
-      id: 1930,
+      backdrop_path: '/5BNjRTNqQff6Mz1c17WCRSdz0RF.jpg',
+      genre_ids: [16, 10402, 10751],
+      id: 490935,
       original_language: 'en',
-      original_title: 'The Amazing Spider-Man',
+      original_title: 'A Frozen Christmas 2',
       overview:
-        "Peter Parker is an outcast high schooler abandoned by his parents as a boy, leaving him to be raised by his Uncle Ben and Aunt May. Like most teenagers, Peter is trying to figure out who he is and how he got to be the person he is today. As Peter discovers a mysterious briefcase that belonged to his father, he begins a quest to understand his parents' disappearance – leading him directly to Oscorp and the lab of Dr. Curt Connors, his father's former partner. As Spider-Man is set on a collision course with Connors' alter ego, The Lizard, Peter will make life-altering choices to use his powers and shape his destiny to become a hero.",
-      popularity: 1742.243,
-      poster_path: '/fSbqPbqXa7ePo8bcnZYN9AHv6zA.jpg',
-      release_date: '2012-06-23',
-      title: 'The Amazing Spider-Man',
+        'When Santa and his reindeer pal Barnaby finish delivering presents for Christmas, they head back to the North Pole to celebrate. Gather around and listen as Santa and his elf pals dance and tell stories. Including time-honored Christmas story classics!',
+      popularity: 4.12,
+      poster_path: '/zrzGLUDdziaBEvIbmXBSCJgLHrC.jpg',
+      release_date: '2017-12-04',
+      title: 'A Frozen Christmas 2',
       video: false,
-      vote_average: 6.6,
-      vote_count: 13783
+      vote_average: 8,
+      vote_count: 2
     },
     {
       adult: false,
-      backdrop_path: '/7h5WAPAcUzOWpp2jrwHBB48790j.jpg',
-      genre_ids: [16, 28],
-      id: 843241,
-      original_language: 'ja',
-      original_title: '劇場版 七つの大罪 光に呪われし者たち',
-      overview:
-        'With the help of the "Dragon Sin of Wrath" Meliodas and the worst rebels in history, the Seven Deadly Sins, the "Holy War", in which four races, including Humans, Goddesses, Fairies and Giants fought against the Demons, is finally over. At the cost of the "Lion Sin of Pride" Escanor\'s life, the Demon King was defeated and the world regained peace. After that, each of the Sins take their own path.',
-      popularity: 1138.071,
-      poster_path: '/k0ThmZQl5nHe4JefC2bXjqtgYp0.jpg',
-      release_date: '2021-07-02',
-      title: 'The Seven Deadly Sins: Cursed by Light',
-      video: false,
-      vote_average: 8.1,
-      vote_count: 245
-    },
-    {
-      adult: false,
-      backdrop_path: '/1zgob2Z8xVE3RZUgOKnHKcVPzOE.jpg',
-      genre_ids: [16, 35, 14],
-      id: 877183,
+      backdrop_path: '/lwM1A6gk8AxSc8q11kJkZDKT0l0.jpg',
+      genre_ids: [35, 37],
+      id: 51364,
       original_language: 'en',
-      original_title: 'The Simpsons in Plusaversary',
+      original_title: 'The Frozen North',
       overview:
-        "The Simpsons host a Disney+ Day party and everyone is on the list… except Homer. With friends from across the service and music fit for a Disney Princess, Plusaversary is Springfield's event of the year.",
-      popularity: 994.766,
-      poster_path: '/9xaAT3V3I9xxqnNiEjCivNFfdlh.jpg',
-      release_date: '2021-11-12',
-      title: 'The Simpsons in Plusaversary',
+        'This satirical parody of William S. Hart\'s melodramatic films finds Buster in the frozen north, "last stop on the subway." He uses a wanted poster as his partner in robbing a gambling house. When he thinks he spies his wife making love to another man he shoots them both only to learn it isn\'t his cabin after all.',
+      popularity: 4.078,
+      poster_path: '/gz0zcPq6oG27v23abgeZD5NzCW0.jpg',
+      release_date: '1922-08-28',
+      title: 'The Frozen North',
       video: false,
-      vote_average: 6.7,
-      vote_count: 167
+      vote_average: 6.1,
+      vote_count: 49
     },
     {
       adult: false,
-      backdrop_path: '/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg',
-      genre_ids: [35, 28, 12, 878],
-      id: 550988,
+      backdrop_path: '/7bS9otN0lW5ZrEWkk6whAjFhboU.jpg',
+      genre_ids: [878, 27],
+      id: 89995,
       original_language: 'en',
-      original_title: 'Free Guy',
+      original_title: 'The Frozen Dead',
       overview:
-        'A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.',
-      popularity: 1039.992,
-      poster_path: '/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg',
-      release_date: '2021-08-11',
-      title: 'Free Guy',
+        'A crazed scientist keeps the heads of Nazi war criminals alive until he can find appropriate bodies on which to attach them so he can revive the Third Reich.',
+      popularity: 3.196,
+      poster_path: '/eXS0MDYABav8Z6ifqvP45nGkFqq.jpg',
+      release_date: '1966-10-15',
+      title: 'The Frozen Dead',
       video: false,
-      vote_average: 7.8,
-      vote_count: 4119
+      vote_average: 5.1,
+      vote_count: 18
     },
     {
       adult: false,
-      backdrop_path: '/3cMfwbF1J9fglSssim4zKG6scIs.jpg',
-      genre_ids: [28],
-      id: 876262,
-      original_language: 'pt',
-      original_title: 'Garota da Moto',
-      overview: '',
-      popularity: 996.583,
-      poster_path: '/sYoWjGSW4XQRWwFDHf3kdMqtCLr.jpg',
-      release_date: '2021-09-23',
-      title: 'Garota da Moto',
+      backdrop_path: null,
+      genre_ids: [10751],
+      id: 314622,
+      original_language: 'en',
+      original_title: 'Disney Parks Frozen Christmas Celebration',
+      overview:
+        'Disney puts a “Frozen” twist on its 31st annual Christmas Day television special. More than a parade,  the joyous occasion includes festive musical performances, and the reunion of three groups of families and friends who have been apart or separated for the holidays.',
+      popularity: 6.638,
+      poster_path: '/mt3kEjZBhQhNuXeG2O3hMe9zmyW.jpg',
+      release_date: '2014-12-25',
+      title: 'Disney Parks Frozen Christmas Celebration',
       video: false,
-      vote_average: 4.9,
-      vote_count: 4
+      vote_average: 7.6,
+      vote_count: 5
     }
   ],
-  total_pages: 31592,
-  total_results: 631821
+  total_pages: 9,
+  total_results: 165
 }
 
-describe.only('GetMovieListUseCase', () => {
+describe('GetMovieListUseCase', () => {
   const domain = new Domain({})
 
   // Primero: el caso de uso está expuesto y existe
@@ -363,13 +362,15 @@ describe.only('GetMovieListUseCase', () => {
 
     beforeEach(() => {
       mocker.create()
+      console.log('before')
     })
 
     afterEach(() => {
       mocker.restore()
+      console.log('after')
     })
 
-    it.only('should return a movie list', () => {
+    it('should return a movie list', done => {
       mocker
         .httpMock(domain.get('config').BASE_URL)
         .get(
@@ -386,19 +387,27 @@ describe.only('GetMovieListUseCase', () => {
           console.log('mocker: ', mocker)
           console.log('response: ', response)
           expect(response).to.deep.equal(MOVIE_LIST)
+          done()
         })
     })
 
-    it('should return a server error', () => {
+    it('should return a server error', done => {
       mocker
         .httpMock(domain.get('config').BASE_URL)
-        .get(`/discover/${domain.get('config').API_KEY}`)
+        .get(
+          `/search/movie?api_key=${
+            domain.get('config').API_KEY
+          }&query=frozen&page=1`
+        )
         .reply({}, 500)
 
       domain
         .get('get_movie_list_by_criteria_and_page_use_case')
         .execute({criteria: 'frozen', page: 1})
-        .then(response => response.to.deep.equal({}))
+        .catch(error => {
+          console.log('ERROR en el test: ', error)
+          done()
+        })
     })
   })
 })

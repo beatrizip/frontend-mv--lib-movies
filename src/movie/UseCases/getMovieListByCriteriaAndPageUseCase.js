@@ -6,11 +6,16 @@ export default class GetMovieListByCriteriaAndPageUseCase extends UseCase {
     this._repository = repository
   }
 
-  async execute({criteria, page}) {
-    const movieList = await this._repository.getMovieListByCriteriaAndPage({
-      criteria,
-      page
-    })
-    return movieList.toJSON()
+  execute({criteria, page}) {
+    return this._repository
+      .getMovieListByCriteriaAndPage({
+        criteria,
+        page
+      })
+      .then(movieList => movieList.toJSON())
+      .catch(error => {
+        console.log('ERROR getMovieListByCriteriaAndPage', error) // Crear un valueObject tipo error
+        return Promise.reject(error)
+      })
   }
 }

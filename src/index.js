@@ -7,10 +7,6 @@ const MovieUseCasesFactory = () =>
   )
 
 const useCases = {
-  get_movie_list_by_criteria_use_case: [
-    MovieUseCasesFactory,
-    'getMovieListByCriteriaUseCase'
-  ],
   get_movie_list_by_criteria_and_page_use_case: [
     MovieUseCasesFactory,
     'getMovieListByCriteriaAndPageUseCase'

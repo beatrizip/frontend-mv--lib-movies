@@ -17,15 +17,7 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     return this._valueObjectFactory.movieListValueObject(data)
   }
 
-  async getMovieListByCriteria(criteria) {
-    const {API_KEY, BASE_URL} = this._config
-    const url = `${BASE_URL}/search/${API_KEY}&query=${criteria}`
-    const {data} = await this._fetcher.get(url)
-
-    return this._valueObjectFactory.movieListValueObject(data)
-  }
-
-  async getMovieListByCriteriaAndPage({criteria, page}) {
+  getMovieListByCriteriaAndPage({criteria, page}) {
     const {API_KEY, BASE_URL} = this._config
     debugger
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${criteria}&page=${page}`
@@ -34,7 +26,7 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
       .then(({data}) => this._valueObjectFactory.movieListValueObject(data))
       .catch(error => {
         console.log(error)
-        debugger
+        return Promise.reject(error)
       })
   }
 
