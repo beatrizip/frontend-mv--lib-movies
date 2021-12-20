@@ -15,7 +15,7 @@ const useCases = {
     MovieUseCasesFactory,
     'getMostPopularMovieListUseCase'
   ],
-  get_movie_details_use_case: [MovieUseCasesFactory, 'getMovieDetailsUseCase']
+  get_movie_detail_use_case: [MovieUseCasesFactory, 'getMovieDetailUseCase']
 }
 
 const Domain = EntryPointFactory({config, useCases})

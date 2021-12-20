@@ -360,15 +360,9 @@ describe('GetMovieListUseCase', () => {
   describe('When the API resolve the request', () => {
     const mocker = new HttpMocker()
 
-    beforeEach(() => {
-      mocker.create()
-      console.log('before')
-    })
+    beforeEach(() => mocker.create())
 
-    afterEach(() => {
-      mocker.restore()
-      console.log('after')
-    })
+    afterEach(() => mocker.restore())
 
     it('should return a movie list', done => {
       mocker
@@ -379,13 +373,11 @@ describe('GetMovieListUseCase', () => {
           }&query=frozen&page=1`
         )
         .reply(MOVIE_LIST, 200)
-      console.log(mocker)
+
       domain
         .get('get_movie_list_by_criteria_and_page_use_case')
         .execute({criteria: 'frozen', page: 1}) // juego de criterios y paginas
         .then(response => {
-          console.log('mocker: ', mocker)
-          console.log('response: ', response)
           expect(response).to.deep.equal(MOVIE_LIST)
           done()
         })

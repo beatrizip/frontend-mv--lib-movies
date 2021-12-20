@@ -6,8 +6,13 @@ export default class GetMostPopularMovieListUseCase extends UseCase {
     this._repository = repository
   }
 
-  async execute() {
-    const movieList = await this._repository.getMostPopularMovieList()
-    return movieList.toJSON() // Siempre aqui esta llamada a toJSON
+  execute() {
+    return this._repository
+      .getMostPopularMovieList()
+      .then(movieList => movieList.toJSON())
+      .catch(error => {
+        console.log('ERROR GetMostPopularMovieListUseCase', error) // Crear un valueObject tipo error
+        return Promise.reject(error)
+      })
   }
 }

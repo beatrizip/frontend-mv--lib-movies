@@ -1,6 +1,6 @@
 import GetMovieListByCriteriaAndPageUseCase from './getMovieListByCriteriaAndPageUseCase'
 import GetMostPopularMovieListUseCase from './getMostPopularMovieListUseCase'
-import GetMovieDetailsUseCase from './getMovieDetailsUseCase'
+import GetMovieDetailUseCase from './getMovieDetailUseCase'
 import MovieRepositoryFactory from '../Repositories/factory'
 
 export default class MovieUseCasesFactory {
@@ -18,8 +18,8 @@ export default class MovieUseCasesFactory {
       })
     })
 
-  static getMovieDetailsUseCase = ({config}) =>
-    new GetMovieDetailsUseCase({
+  static getMovieDetailUseCase = ({config}) =>
+    new GetMovieDetailUseCase({
       repository: MovieRepositoryFactory.httpMovieRepository({
         config
       })
