@@ -1,4 +1,4 @@
-import {MovieEntity} from './MovieEntity'
+import MovieEntity from './MovieEntity'
 
 export default class MovieEntityFactory {
   static movieEntity = ({id, title, poster, overview}) =>

@@ -1,14 +1,12 @@
 import MovieRepositoryInterface from './MovieRepositoryInterface'
 
 export default class HTTPMovieRepository extends MovieRepositoryInterface {
-  constructor({config, fetcher, valueObjectFactory, entityFactory}) {
+  constructor({config, fetcher, valueObjectFactory, mapperFactory}) {
     super()
     this._config = config
     this._fetcher = fetcher
     this._valueObjectFactory = valueObjectFactory
-    this._entityFactory = entityFactory
-
-    console.log(this)
+    this._mapperFactory = mapperFactory
   }
 
   getMostPopularMovieList() {
@@ -26,13 +24,16 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
   getMovieListByCriteriaAndPage({criteria, page}) {
     const {API_KEY, BASE_URL} = this._config
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${criteria}&page=${page}`
-    return this._fetcher
-      .get(url)
-      .then(({data}) => this._valueObjectFactory.movieListValueObject(data))
-      .catch(error => {
-        console.log(error)
-        return Promise.reject(error)
-      })
+    return this._fetcher.get(url).then(({data}) => {
+      this._valueObjectFactory.movieListValueObject(data)
+
+      return this._mapperFactory
+        .fromGetMovieListToMovieListValueObject({
+          config: this._config,
+          movieListValueObject: this._valueObjectFactory.movieListValueObject
+        })
+        .map(data)
+    })
   }
 
   getMovieDetail({id}) {
@@ -41,14 +42,13 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     return this._fetcher
       .get(url)
       .then(({data}) => {
-        console.log('VO factory', this._valueObjectFactory)
-        console.log('entity factory', this._entityFactory)
-        return this._entityFactory.movieEntity({
-          id: data.id,
-          title: data.title,
-          poster: data.poster_path,
-          overview: data.overview
-        })
+        return this._mapperFactory
+          .fromGetMovieDetailToValueObject({
+            config: this._config,
+            movieDetailValueObject: this._valueObjectFactory
+              .movieDetailValueObject
+          })
+          .map(data)
       })
       .catch(error => {
         console.log(error)
