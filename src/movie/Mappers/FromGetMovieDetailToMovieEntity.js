@@ -5,11 +5,9 @@ export default class FromGetMovieDetailToMovieEntity extends Mapper {
     super()
     this._config = config
     this._movieEntityFactory = movieEntityFactory
-    console.log('holi', this)
   }
 
   map(movie) {
-    console.log(this)
     return this._movieEntityFactory({
       id: movie.id,
       title: movie.title,

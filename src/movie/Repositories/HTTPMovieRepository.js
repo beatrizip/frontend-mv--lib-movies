@@ -50,15 +50,14 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}`
     return this._fetcher
       .get(url)
-      .then(({data}) => {
-        console.log('1: ', this._entityFactory.movieEntity)
-        return this._mapperFactory
+      .then(({data}) =>
+        this._mapperFactory
           .fromGetMovieDetailToMovieEntity({
             config: this._config,
             movieEntityFactory: this._entityFactory.movieEntity
           })
           .map(data)
-      })
+      )
       .catch(error => {
         console.log(error)
         return Promise.reject(error)
