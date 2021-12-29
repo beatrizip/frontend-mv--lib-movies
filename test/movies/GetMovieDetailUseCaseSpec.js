@@ -96,7 +96,7 @@ describe('GetMovieDetailUseCase', () => {
 
     afterEach(() => mocker.restore())
 
-    it.only('should return a movie with id, overview, poster and title ', done => {
+    it('should return a movie with id, overview, poster and title ', done => {
       mocker
         .httpMock(domain.get('config').BASE_URL)
         .get(`/movie/634649?api_key=${domain.get('config').API_KEY}`)

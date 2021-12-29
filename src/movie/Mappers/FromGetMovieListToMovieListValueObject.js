@@ -8,6 +8,7 @@ export default class fromGetMovieListToMovieListValueObject extends Mapper {
   }
 
   map(movieList) {
+    console.log('movieList', movieList)
     return this._movieListValueObject({
       ...movieList,
       results: movieList.results.map(movie => {

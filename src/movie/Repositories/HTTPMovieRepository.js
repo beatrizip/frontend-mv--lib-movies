@@ -22,7 +22,7 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     return this._fetcher
       .get(url)
       .then(({data}) => {
-        return this._valueObjectFactory.movieListValueObject(data.results)
+        return this._valueObjectFactory.movieListValueObject(data)
       })
       .catch(error => {
         console.log(error)
@@ -34,8 +34,8 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     const {API_KEY, BASE_URL} = this._config
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${criteria}&page=${page}`
     return this._fetcher.get(url).then(({data}) => {
+      console.log('data', data)
       this._valueObjectFactory.movieListValueObject(data)
-
       return this._mapperFactory
         .fromGetMovieListToMovieListValueObject({
           config: this._config,

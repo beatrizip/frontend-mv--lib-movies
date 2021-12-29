@@ -22,11 +22,13 @@ export default class MovieMappersFactory {
 
   static fromGetMovieListToMovieListValueObject = ({
     config,
-    movieListValueObject
+    movieListValueObject,
+    movieEntityFactory
   }) => {
     return new FromGetMovieListToMovieListValueObject({
       config,
-      movieListValueObject: movieListValueObject
+      movieListValueObject: movieListValueObject,
+      movieEntityFactory: movieEntityFactory
     })
   }
 }
