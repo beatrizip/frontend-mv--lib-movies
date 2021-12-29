@@ -1,11 +1,18 @@
 import MovieRepositoryInterface from './MovieRepositoryInterface'
 
 export default class HTTPMovieRepository extends MovieRepositoryInterface {
-  constructor({config, fetcher, valueObjectFactory, mapperFactory}) {
+  constructor({
+    config,
+    fetcher,
+    valueObjectFactory,
+    entityFactory,
+    mapperFactory
+  }) {
     super()
     this._config = config
     this._fetcher = fetcher
     this._valueObjectFactory = valueObjectFactory
+    this._entityFactory = entityFactory
     this._mapperFactory = mapperFactory
   }
 
@@ -14,7 +21,9 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}`
     return this._fetcher
       .get(url)
-      .then(({data}) => this._valueObjectFactory.movieListValueObject(data))
+      .then(({data}) => {
+        return this._valueObjectFactory.movieListValueObject(data.results)
+      })
       .catch(error => {
         console.log(error)
         return Promise.reject(error)
@@ -42,11 +51,11 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     return this._fetcher
       .get(url)
       .then(({data}) => {
+        console.log('1: ', this._entityFactory.movieEntity)
         return this._mapperFactory
-          .fromGetMovieDetailToValueObject({
+          .fromGetMovieDetailToMovieEntity({
             config: this._config,
-            movieDetailValueObject: this._valueObjectFactory
-              .movieDetailValueObject
+            movieEntityFactory: this._entityFactory.movieEntity
           })
           .map(data)
       })

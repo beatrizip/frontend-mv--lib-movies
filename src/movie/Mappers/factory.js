@@ -1,13 +1,12 @@
 import FromGetMovieDetailToMovieEntity from './FromGetMovieDetailToMovieEntity'
-import MovieEntityFactory from '../Entities/factory'
 import FromGetMovieDetailToMovieValueObject from './FromGetMovieDetailToMovieValueObject'
 import FromGetMovieListToMovieListValueObject from './FromGetMovieListToMovieListValueObject'
 
 export default class MovieMappersFactory {
-  static fromGetMovieDetailToMovieEntity = ({config} = {}) => {
+  static fromGetMovieDetailToMovieEntity = ({config, movieEntityFactory}) => {
     return new FromGetMovieDetailToMovieEntity({
       config,
-      movieEntityFactory: MovieEntityFactory.movieEntity
+      movieEntityFactory: movieEntityFactory
     })
   }
 
