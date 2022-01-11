@@ -21,9 +21,15 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
     const url = `${BASE_URL}/discover/movie?api_key=${API_KEY}`
     return this._fetcher
       .get(url)
-      .then(({data}) => {
-        return this._valueObjectFactory.movieListValueObject(data)
-      })
+      .then(({data}) =>
+        this._mapperFactory
+          .fromGetMovieListToMovieListValueObject({
+            config: this._config,
+            movieListValueObject: this._valueObjectFactory.movieListValueObject,
+            movieEntityFactory: this._entityFactory.movieEntity
+          })
+          .map(data)
+      )
       .catch(error => {
         console.log(error)
         return Promise.reject(error)
@@ -33,16 +39,15 @@ export default class HTTPMovieRepository extends MovieRepositoryInterface {
   getMovieListByCriteriaAndPage({criteria, page}) {
     const {API_KEY, BASE_URL} = this._config
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${criteria}&page=${page}`
-    return this._fetcher.get(url).then(({data}) => {
-      console.log('data', data)
-      this._valueObjectFactory.movieListValueObject(data)
-      return this._mapperFactory
+    return this._fetcher.get(url).then(({data}) =>
+      this._mapperFactory
         .fromGetMovieListToMovieListValueObject({
           config: this._config,
-          movieListValueObject: this._valueObjectFactory.movieListValueObject
+          movieListValueObject: this._valueObjectFactory.movieListValueObject,
+          movieEntityFactory: this._entityFactory.movieEntity
         })
         .map(data)
-    })
+    )
   }
 
   getMovieDetail({id}) {
